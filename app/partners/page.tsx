@@ -52,7 +52,7 @@ export default function PartnersPage() {
         <div className="bg-blue-600 text-white rounded-lg p-8 md:p-12 mb-16">
           <h2 className="text-3xl font-bold mb-4">Partner With Us</h2>
           <p className="text-lg mb-6">
-            Are you a manufacturer or logistics provider looking to expand your reach in Africa? We'd love to work with you.
+            Are you a manufacturer or logistics provider looking to expand your reach in Africa? We&apos;d love to work with you.
           </p>
           <button className="bg-white text-blue-600 px-8 py-3 rounded font-bold hover:bg-gray-100">
             Become a Partner

@@ -16,7 +16,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Introduction</h2>
             <p className="text-gray-600 leading-relaxed">
-              TKEA237 ("we" or "us" or "our") operates the TKEA237 website. This page informs you of our policies regarding the collection, use, 
+              TKEA237 (&quot;we&quot; or &quot;us&quot; or &quot;our&quot;) operates the TKEA237 website. This page informs you of our policies regarding the collection, use, 
               and disclosure of personal data when you use our website and the choices you have associated with that data.
             </p>
           </section>
@@ -59,7 +59,7 @@ export default function PrivacyPage() {
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Changes to This Privacy Policy</h2>
             <p className="text-gray-600 leading-relaxed">
               We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page 
-              and updating the "effective date" at the top of this Privacy Policy.
+              and updating the &quot;effective date&quot; at the top of this Privacy Policy.
             </p>
           </section>
 

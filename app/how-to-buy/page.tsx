@@ -125,7 +125,7 @@ export default function HowToBuyPage() {
                   After successful payment:
                 </p>
                 <ul className="list-disc list-inside text-gray-600 space-y-1 ml-4">
-                  <li>You'll receive an order confirmation email</li>
+                  <li>You&apos;ll receive an order confirmation email</li>
                   <li>Track your shipment in real-time</li>
                   <li>Receive SMS updates on delivery status</li>
                   <li>Contact support anytime with questions</li>
