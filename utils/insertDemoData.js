@@ -228,26 +228,81 @@ const demoCategories = [
 ];
 
 async function insertDemoData() {
-  for (const product of demoProducts) {
-    await prisma.product.create({
-      data: product,
+  // First, create a default merchant
+  let merchant = await prisma.merchant.findFirst();
+  if (!merchant) {
+    merchant = await prisma.merchant.create({
+      data: {
+        name: "Default Merchant",
+        description: "Default merchant for demo products",
+        email: "merchant@example.com",
+        phone: "+1234567890",
+        address: "123 Main Street",
+        status: "ACTIVE",
+      },
     });
+    console.log("Default merchant created!");
+  } else {
+    console.log("Default merchant already exists!");
   }
-  console.log("Demo products inserted successfully!");
+
+  // Create categories first (using upsert to avoid duplicates)
+  const categoryMap = {};
+  for (const category of demoCategories) {
+    const createdCategory = await prisma.category.upsert({
+      where: { name: category.name },
+      update: {},
+      create: category,
+    });
+    categoryMap[category.name] = createdCategory.id;
+  }
+  console.log("Demo categories processed!");
+
+  // Create products with merchant association
+  for (const product of demoProducts) {
+    const categoryId = categoryMap[product.category];
+    if (!categoryId) {
+      console.warn(`Category ${product.category} not found, skipping product ${product.title}`);
+      continue;
+    }
+
+    const { id, title, price, rating, description, mainImage, slug, manufacturer, inStock } = product;
+    try {
+      await prisma.product.create({
+        data: {
+          id,
+          title,
+          price,
+          rating,
+          description,
+          mainImage,
+          slug,
+          manufacturer,
+          inStock,
+          categoryId,
+          merchantId: merchant.id,
+        },
+      });
+    } catch (error) {
+      if (error.code === "P2002") {
+        console.log(`Product with slug ${slug} already exists, skipping...`);
+      } else {
+        throw error;
+      }
+    }
+  }
+  console.log("Demo products processed!");
 
   for (const image of demoProductImages) {
-    await prisma.image.create({
-      data: image,
-    });
+    try {
+      await prisma.image.create({
+        data: image,
+      });
+    } catch (error) {
+      console.log(`Image already exists, skipping...`);
+    }
   }
-  console.log("Demo images inserted successfully!");
-
-  for (const category of demoCategories) {
-    await prisma.category.create({
-      data: category,
-    });
-  }
-  console.log("Demo categories inserted successfully!");
+  console.log("Demo images processed!");
 }
 
 insertDemoData()

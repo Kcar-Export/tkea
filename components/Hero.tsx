@@ -1,3 +1,5 @@
+"use client";
+
 // *********************
 // Role of the component: Classical hero component on home page
 // Name of the component: Hero.tsx
@@ -9,9 +11,29 @@
 // *********************
 
 import Image from "next/image";
-import React from "react";
+import Link from "next/link";
+import React, { useState, useEffect } from "react";
 
 const Hero = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const images = [
+    { src: "/drony.png", alt: "drone" },
+    { src: "/phony.png", alt: "phone" },
+    { src: "/playi.png", alt: "player" },
+    { src: "/speaky.png", alt: "speaker" },
+    { src: "/tvy.png", alt: "tv" },
+    { src: "/camy.png", alt: "camera" },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="h-[700px] w-full bg-blue-500 max-lg:h-[900px] max-md:h-[750px]">
       <div className="grid grid-cols-3 items-center justify-items-center px-10 gap-x-10 max-w-screen-2xl mx-auto h-full max-lg:grid-cols-1 max-lg:py-10 max-lg:gap-y-10">
@@ -20,25 +42,17 @@ const Hero = () => {
             THE PRODUCT OF THE FUTURE
           </h1>
           <p className="text-white max-sm:text-sm">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor modi
-            iure laudantium necessitatibus ab, voluptates vitae ullam. Officia
-            ipsam iusto beatae nesciunt, consequatur deserunt minima maiores
-            earum obcaecati. Optio, nam!
+            Discover premium Korean electronics delivered straight to Cameroon and across Africa. Experience innovation, quality, and affordability in one digital marketplace.
           </p>
-          <div className="flex gap-x-1 max-lg:flex-col max-lg:gap-y-1">
-            <button className="bg-white text-blue-600 font-bold px-12 py-3 max-lg:text-xl max-sm:text-lg hover:bg-gray-100">
-              BUY NOW
-            </button>
-            <button className="bg-white text-blue-600 font-bold px-12 py-3 max-lg:text-xl max-sm:text-lg hover:bg-gray-100">
-              LEARN MORE
-            </button>
-          </div>
+          <Link href="/shop" className="block text-blue-600 bg-white font-bold px-12 py-3 text-xl hover:bg-gray-100 w-96 mt-2 max-md:text-lg max-md:w-72 max-[480px]:w-60">
+            SHOP NOW
+          </Link>
         </div>
         <Image
-          src="/watch for banner.png"
+          src={images[currentImageIndex].src}
           width={400}
           height={400}
-          alt="smart watch"
+          alt={images[currentImageIndex].alt}
           className="max-md:w-[300px] max-md:h-[300px] max-sm:h-[250px] max-sm:w-[250px] w-auto h-auto"
         />
       </div>

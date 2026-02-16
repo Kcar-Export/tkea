@@ -57,6 +57,25 @@ const LoginPage = () => {
     } else {
       setError("");
       toast.success("Successful login");
+      
+      // Check user role from API to determine redirect
+      try {
+        const userResponse = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/users/email/${email}`);
+        if (userResponse.ok) {
+          const userData = await userResponse.json();
+          // Redirect based on user role
+          if (userData.role === "admin") {
+            router.replace("/admin/products");
+          } else {
+            router.replace("/");
+          }
+        } else {
+          router.replace("/");
+        }
+      } catch (error) {
+        console.error("Error fetching user role:", error);
+        router.replace("/");
+      }
     }
   };
 

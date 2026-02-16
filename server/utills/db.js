@@ -1,11 +1,16 @@
-// Prefer the root-level Prisma Client (generated from ../prisma/schema.prisma),
-// which includes bulk upload models. Fallback to local if not available.
+// Prefer the server-level Prisma Client, fallback to root
 let PrismaClient;
 try {
-    // When running server/* scripts, this resolves to project root node_modules
-    ({ PrismaClient } = require("../../node_modules/@prisma/client"));
-} catch (e) {
+    // When running from server folder, use local node_modules
     ({ PrismaClient } = require("@prisma/client"));
+} catch (e) {
+    try {
+        // Fallback to root node_modules
+        ({ PrismaClient } = require("../../node_modules/@prisma/client"));
+    } catch (e2) {
+        console.error('Failed to load Prisma from both locations:', e.message, e2.message);
+        throw new Error('Could not load @prisma/client. Make sure to run "prisma generate" first.');
+    }
 }
 
 const prismaClientSingleton = () => {

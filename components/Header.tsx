@@ -1,7 +1,7 @@
 // *********************
 // Role of the component: Header component
 // Name of the component: Header.tsx
-// Developer: Aleksandar Kuzmanovic
+// Developer: Felix Kwitonda
 // Version: 1.0
 // Component call: <Header />
 // Input parameters: no input parameters
@@ -24,6 +24,7 @@ import { signOut, useSession } from "next-auth/react";
 import toast from "react-hot-toast";
 import { useWishlistStore } from "@/app/_zustand/wishlistStore";
 import apiClient from "@/lib/api";
+import TKEA237Logo from "./TKEA237Logo";
 
 const Header = () => {
   const { data: session, status } = useSession();
@@ -81,7 +82,7 @@ const Header = () => {
       {pathname.startsWith("/admin") === false && (
         <div className="h-32 bg-white flex items-center justify-between px-16 max-[1320px]:px-16 max-md:px-6 max-lg:flex-col max-lg:gap-y-7 max-lg:justify-center max-lg:h-60 max-w-screen-2xl mx-auto">
           <Link href="/">
-            <img src="/logo v1 svg.svg" width={300} height={300} alt="singitronic logo" className="relative right-5 max-[1023px]:w-56" />
+            <TKEA237Logo width={200} height={60} className="w-auto" />
           </Link>
           <SearchInput />
           <div className="flex gap-x-10 items-center">
@@ -94,13 +95,7 @@ const Header = () => {
       {pathname.startsWith("/admin") === true && (
         <div className="flex justify-between h-32 bg-white items-center px-16 max-[1320px]:px-10  max-w-screen-2xl mx-auto max-[400px]:px-5">
           <Link href="/">
-            <Image
-              src="/logo v1.png"
-              width={130}
-              height={130}
-              alt="singitronic logo"
-              className="w-56 h-auto"
-            />
+            <TKEA237Logo width={120} height={40} className="w-auto" />
           </Link>
           <div className="flex gap-x-5 items-center">
             <NotificationBell />

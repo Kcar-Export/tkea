@@ -84,26 +84,26 @@ export const incentives = [
 
 export const navigation = {
   sale: [
-    { name: "Discounts", href: "#" },
-    { name: "News", href: "#" },
-    { name: "Register Discounts", href: "#" },
+    { name: "Discounts", href: "/discounts" },
+    { name: "News", href: "/news" },
+    { name: "Register Discounts", href: "/register-discounts" },
   ],
   about: [
-    { name: "About Singitronic", href: "#" },
-    { name: "Work With Us", href: "#" },
-    { name: "Company Profile", href: "#" },
+    { name: "About TKEA237", href: "/about" },
+    { name: "Work With Us", href: "/careers" },
+    { name: "Company Profile", href: "/company-profile" },
   ],
   buy: [
-    { name: "Singitronic Loyalty Card", href: "#" },
-    { name: "Terms Of Use", href: "#" },
-    { name: "Privacy Policy", href: "#" },
-    { name: "Complaints", href: "#" },
-    { name: "Partners", href: "#" },
+    { name: "TKEA237 Loyalty Card", href: "/loyalty-card" },
+    { name: "Terms Of Use", href: "/terms" },
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Complaints", href: "/complaints" },
+    { name: "Partners", href: "/partners" },
   ],
   help: [
-    { name: "Contact", href: "#" },
-    { name: "How to Buy at Singitronic", href: "#" },
-    { name: "FAQ", href: "#" },
+    { name: "Contact", href: "/contact" },
+    { name: "How to Buy at TKEA237", href: "/how-to-buy" },
+    { name: "FAQ", href: "/faq" },
   ],
 };
 

@@ -63,7 +63,11 @@ app.use(errorLogger);
 
 const allowedOrigins = [
   'http://localhost:3000',
+  'http://127.0.0.1:3000',
   'http://localhost:3001',
+  'http://127.0.0.1:3001',
+  'http://192.168.219.111:3000',
+  'http://192.168.219.111:3001',
   process.env.NEXTAUTH_URL,
   process.env.FRONTEND_URL,
 ].filter(Boolean); // Remove undefined values
@@ -161,7 +165,9 @@ app.get('/rate-limit-info', (req, res) => {
 app.use('*', (req, res) => {
   res.status(404).json({
     error: 'Route not found',
-    requestId: req.reqId
+    requestId: req.reqId,
+    path: req.path,
+    method: req.method
   });
 });
 
@@ -171,8 +177,17 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
+const server = app.listen(PORT, 'localhost', () => {
   console.log(`Server running on port ${PORT}`);
   console.log('Rate limiting and request logging enabled for all endpoints');
   console.log('Logs are being written to server/logs/ directory');
+});
+
+server.on('error', (error) => {
+  if (error.code === 'EADDRINUSE') {
+    console.error(`Port ${PORT} is already in use!`);
+    process.exit(1);
+  } else {
+    console.error('Server error:', error);
+  }
 });

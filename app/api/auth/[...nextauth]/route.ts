@@ -97,10 +97,10 @@ export const authOptions: NextAuthOptions = {
         token.iat = Math.floor(Date.now() / 1000); // Issued at time
       }
       
-      // Check if token is expired (15 minutes)
+      // Check if token is expired (24 hours)
       const now = Math.floor(Date.now() / 1000);
       const tokenAge = now - (token.iat as number);
-      const maxAge = 15 * 60; // 15 minutes
+      const maxAge = 24 * 60 * 60; // 24 hours
       
       if (tokenAge > maxAge) {
         // Token expired, return empty object to force re-authentication
@@ -123,11 +123,11 @@ export const authOptions: NextAuthOptions = {
   },
   session: {
     strategy: "jwt",
-    maxAge: 15 * 60, // 15 minutes in seconds
-    updateAge: 5 * 60, // Update session every 5 minutes
+    maxAge: 24 * 60 * 60, // 24 hours in seconds
+    updateAge: 60 * 60, // Update session every 1 hour
   },
   jwt: {
-    maxAge: 15 * 60, // 15 minutes in seconds
+    maxAge: 24 * 60 * 60, // 24 hours in seconds
   },
   secret: process.env.NEXTAUTH_SECRET,
   debug: process.env.NODE_ENV === "development",

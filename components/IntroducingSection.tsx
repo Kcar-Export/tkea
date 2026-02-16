@@ -1,11 +1,11 @@
 // *********************
-// Role of the component: IntroducingSection with the text "Introducing Singitronic"
+// Role of the component: IntroducingSection with the text "Introducing TKEA237"
 // Name of the component: IntroducingSection.tsx
 // Developer: Aleksandar Kuzmanovic
 // Version: 1.0
 // Component call: <IntroducingSection />
 // Input parameters: no input parameters
-// Output: Section with the text "Introducing Singitronic" and button
+// Output: Section with the text "Introducing TKEA237" and button
 // *********************
 
 import Link from "next/link";
@@ -13,10 +13,10 @@ import React from "react";
 
 const IntroducingSection = () => {
   return (
-    <div className="py-20 pt-24 bg-gradient-to-l from-white to-blue-600">
+    <div className="py-20 pt-24 bg-gradient-to-l from-white to-blue-600 hidden">
       <div className="text-center flex flex-col gap-y-5 items-center">
         <h2 className="text-white text-8xl font-extrabold text-center mb-2 max-md:text-6xl max-[480px]:text-4xl">
-          INTRODUCING <span className="text-black">SINGI</span><span className="text-blue-600">TRONIC</span>
+          INTRODUCING <span className="text-black">TKEA</span><span className="text-blue-600">237</span>
         </h2>
         <div>
           <p className="text-white text-center text-2xl font-semibold max-md:text-xl max-[480px]:text-base">

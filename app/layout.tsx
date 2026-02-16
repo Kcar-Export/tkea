@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { getServerSession } from "next-auth/next";
-import 'svgmap/dist/svgMap.min.css';
+// SVG Map CSS import - commented out due to export issues
+// import 'svgmap/dist/svgMap.min.css';
 import SessionProvider from "@/utils/SessionProvider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Providers from "@/Providers";
 import SessionTimeoutWrapper from "@/components/SessionTimeoutWrapper";
+import FloatingWhatsappButton from "@/components/FloatingWhatsappButton";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,6 +34,7 @@ export default async function RootLayout({
             {children}
           </Providers>
           <Footer />
+          <FloatingWhatsappButton />
         </SessionProvider>
       </body>
     </html>
