@@ -10,6 +10,7 @@
 
 "use client";
 import React from "react";
+import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -42,7 +43,12 @@ function SimpleSlider() {
               Shop now
             </Link>
           </div>
-          <img src="/slider image 1.webp" alt="slider 1" className="h-full" />
+          <Image
+            src="/slider image 1.webp"
+            alt="slider 1"
+            fill
+            className="h-full object-cover"
+          />
         </div>
         <div className="h-[500px] max-lg:h-[400px] max-md:h-[250px] max-[500px]:h-[200px] max-[400px]:h-[150px] relative">
           <div className="absolute left-[50%] translate-x-[-50%] translate-y-[30%] h-full text-center max-lg:translate-y-[25%] max-md:translate-y-[20%] max-sm:hidden">
@@ -59,7 +65,12 @@ function SimpleSlider() {
               Shop now
             </Link>
           </div>
-          <img src="/slider image 2.webp" alt="slider 1" className="h-full" />
+          <Image
+            src="/slider image 2.webp"
+            alt="slider 2"
+            fill
+            className="h-full object-cover"
+          />
         </div>
       </Slider>
     </div>

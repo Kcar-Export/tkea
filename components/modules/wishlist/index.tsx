@@ -30,21 +30,21 @@ export const WishlistModule = () => {
     setWishlist(productArray);
   };
 
-  const getUserByEmail = async () => {
-    if (session?.user?.email) {
-      apiClient.get(`/api/users/email/${session?.user?.email}`, {
-        cache: "no-store",
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          getWishlistByUserId(data?.id);
-        });
-    }
-  };
-
   useEffect(() => {
+    const getUserByEmail = async () => {
+      if (session?.user?.email) {
+        apiClient.get(`/api/users/email/${session?.user?.email}`, {
+          cache: "no-store",
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            getWishlistByUserId(data?.id);
+          });
+      }
+    };
+
     getUserByEmail();
-  }, [session?.user?.email, wishlist.length]);
+  }, [session?.user?.email, wishlist.length, getWishlistByUserId]);
   return (
     <>
 
