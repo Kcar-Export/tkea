@@ -53,7 +53,7 @@ export default function HowToBuyPage() {
               <div>
                 <h3 className="text-2xl font-bold text-blue-600 mb-4">1. Account Registration</h3>
                 <p className="text-gray-600 mb-3">
-                  Visit our website and click "Register" or "Sign Up". Fill in your basic information including:
+                  Visit our website and click &quot;Register&quot; or &quot;Sign Up&quot;. Fill in your basic information including:
                 </p>
                 <ul className="list-disc list-inside text-gray-600 space-y-1 ml-4">
                   <li>Full name</li>
@@ -85,10 +85,10 @@ export default function HowToBuyPage() {
                   When you find a product you like:
                 </p>
                 <ul className="list-disc list-inside text-gray-600 space-y-1 ml-4">
-                  <li>Click "Add to Cart" button</li>
+                  <li>Click &quot;Add to Cart&quot; button</li>
                   <li>Select the quantity you want</li>
                   <li>You can continue shopping or proceed to checkout</li>
-                  <li>Your cart is saved for 30 days if you don't purchase</li>
+                  <li>Your cart is saved for 30 days if you don&apos;t purchase</li>
                 </ul>
               </div>
 

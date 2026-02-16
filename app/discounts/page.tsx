@@ -34,7 +34,7 @@ export default function DiscountsPage() {
 
         <div className="mt-16 bg-blue-600 text-white rounded-lg p-8 md:p-12">
           <h2 className="text-3xl font-bold mb-4">Flash Sale This Weekend</h2>
-          <p className="text-lg mb-6">Get up to 50% off on selected accessories. Don't miss this incredible opportunity!</p>
+          <p className="text-lg mb-6">Get up to 50% off on selected accessories. Don&apos;t miss this incredible opportunity!</p>
           <button className="bg-white text-blue-600 px-8 py-3 font-bold rounded hover:bg-gray-100">Browse Flash Sale</button>
         </div>
       </div>

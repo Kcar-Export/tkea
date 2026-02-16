@@ -20,7 +20,7 @@ export default function AboutPage() {
               We believe that quality technology should be accessible to everyone.
             </p>
             <p className="text-gray-600 text-lg leading-relaxed mb-4">
-              Since our inception, we've served thousands of satisfied customers across multiple African countries. 
+              Since our inception, we&apos;ve served thousands of satisfied customers across multiple African countries. 
               Our commitment to excellence and customer satisfaction has made us a trusted name in the electronics industry.
             </p>
             <p className="text-gray-600 text-lg leading-relaxed">

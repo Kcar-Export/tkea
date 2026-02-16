@@ -32,14 +32,14 @@ export default function TermsPage() {
               <li>Use the materials for any commercial purpose or for any public display</li>
               <li>Attempt to decompile or reverse engineer any software contained on the website</li>
               <li>Remove any copyright or other proprietary notations from the materials</li>
-              <li>Transfer the materials to another person or "mirror" the materials on any other server</li>
+              <li>Transfer the materials to another person or &quot;mirror&quot; the materials on any other server</li>
             </ul>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Disclaimer</h2>
             <p className="text-gray-600 leading-relaxed">
-              The materials on TKEA237's website are provided "as is". TKEA237 makes no warranties, expressed or implied, and hereby disclaims and 
+              The materials on TKEA237&apos;s website are provided &quot;as is&quot;. TKEA237 makes no warranties, expressed or implied, and hereby disclaims and 
               negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular 
               purpose, or non-infringement of intellectual property or other violation of rights.
             </p>

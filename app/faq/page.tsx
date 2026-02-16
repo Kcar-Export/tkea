@@ -70,7 +70,7 @@ export default function FAQPage() {
         </div>
 
         <div className="mt-16 bg-blue-600 text-white rounded-lg p-8 md:p-12 text-center">
-          <h2 className="text-3xl font-bold mb-4">Didn't find your answer?</h2>
+          <h2 className="text-3xl font-bold mb-4">Didn&apos;t find your answer?</h2>
           <p className="text-lg mb-6">Our customer support team is here to help 24/7.</p>
           <button className="bg-white text-blue-600 px-8 py-3 rounded font-bold hover:bg-gray-100">
             Contact Support
@@ -86,7 +86,7 @@ export default function FAQPage() {
           <div className="bg-blue-50 rounded-lg p-6 text-center">
             <div className="text-4xl mb-3">📧</div>
             <h3 className="font-bold text-gray-900 mb-2">Email Support</h3>
-            <p className="text-gray-600 text-sm">Send us an email at support@tkea237.com and we'll respond within 24 hours.</p>
+            <p className="text-gray-600 text-sm">Send us an email at support@tkea237.com and we&apos;ll respond within 24 hours.</p>
           </div>
           <div className="bg-blue-50 rounded-lg p-6 text-center">
             <div className="text-4xl mb-3">📞</div>
